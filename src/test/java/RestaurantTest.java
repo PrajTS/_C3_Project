@@ -60,5 +60,12 @@ class RestaurantTest {
         assertThrows(itemNotFoundException.class,
                 ()->restaurant.removeFromMenu("French fries"));
     }
+
+    @Test
+    public void passing_items_must_return_order_value() {
+        String[] orderItemNames = {"Sweet corn soup","Vegetable lasagne"};
+        int orderValue = restaurant.getOrderValue(orderItemNames);
+        assertEquals(orderValue,388);
+    }
     //<<<<<<<<<<<<<<<<<<<<<<<MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 }
